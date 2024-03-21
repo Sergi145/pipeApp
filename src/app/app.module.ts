@@ -1,9 +1,19 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {ButtonModule} from "primeng/button";
+import {SharedModule} from "./shared/shared.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//configuracion del local de la app
+
+import localeEs from '@angular/common/locales/ca-ES-valencia';
+import localeFr from '@angular/common/locales/fr-CA';
+import {registerLocaleData} from "@angular/common";
+
+registerLocaleData(localeEs);
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -11,10 +21,15 @@ import {ButtonModule} from "primeng/button";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    ButtonModule
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID, useValue: 'ca-ES-valencia'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
