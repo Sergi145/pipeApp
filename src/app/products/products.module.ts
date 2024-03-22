@@ -8,6 +8,8 @@ import { CommonPagesComponent } from './pages/common-pages/common-pages.componen
 import {PrimeNgModule} from "../prime-ng/prime-ng.module";
 import { OrderPagesComponent } from './pages/order-pages/order-pages.component';
 import {ToggleCasePipe} from "./pipes/   toggle-case.pipe";
+import {CanFlyPipe} from "./pipes/can-fly.pipe";
+import {SortByPipe} from "./pipes/sort-by.pipe";
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {ToggleCasePipe} from "./pipes/   toggle-case.pipe";
     NumbersPagesComponent,
     CommonPagesComponent,
     OrderPagesComponent,
-    ToggleCasePipe
+    ToggleCasePipe,
+    CanFlyPipe,
+    SortByPipe
   ],
   imports: [
     CommonModule,
